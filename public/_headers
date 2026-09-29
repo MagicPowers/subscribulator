@@ -1,0 +1,15 @@
+# Cloudflare reads this file when serving the site; it is not published itself.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+
+# Vite fingerprints everything in /assets, so browsers can keep it forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Keep the *.workers.dev copy out of search results once the custom domain is live.
+https://:worker.:account.workers.dev/*
+  X-Robots-Tag: noindex

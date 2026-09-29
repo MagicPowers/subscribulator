@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Must match the Worker name in the Cloudflare dashboard when using Git builds.
+  "name": "subscribulator",
+  "compatibility_date": "2026-09-27",
+  // Static site only: Cloudflare serves the Vite build straight from its edge, no Worker code runs.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
